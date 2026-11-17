@@ -1,0 +1,9 @@
+.godot/
+.export/
+.gradle/
+build/
+*.tmp
+*.log
+*.keystore
+*.jks
+*.p12

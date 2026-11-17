@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bj2rnvqrtn7c2"]
+
+[ext_resource type="Script" uid="uid://bxjuimyfdskn1" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://caf84c7p5od3c" path="res://scripts/luxury_office.gd" id="2_office"]
+[ext_resource type="Script" uid="uid://dhnx0er1dghuu" path="res://scripts/nexus_hand_controller.gd" id="3_hand"]
+
+[node name="NEXUS_VR" type="Node3D" unique_id=75299734]
+script = ExtResource("1_main")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=868028716]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1992924762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
+current = true
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1567986330]
+tracker = &"left_hand"
+pose = &"aim"
+script = ExtResource("3_hand")
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=400634583]
+tracker = &"right_hand"
+pose = &"aim"
+script = ExtResource("3_hand")
+is_left_hand = false
+
+[node name="LuxuryOffice" type="Node3D" parent="." unique_id=772544731]
+script = ExtResource("2_office")
